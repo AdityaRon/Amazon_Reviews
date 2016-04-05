@@ -4,6 +4,7 @@ str(Orginal)
 #Selecting Only the required columns
 reviews = Orginal[,c(1,2,3,4,5,6,7)]
 str(reviews)
+
 #Merging the review heading and the review
 reviews$review=paste(reviews$rev_heading, reviews$review, sep = ",")
 
@@ -25,6 +26,7 @@ mydfm = dfm(myCorpus, verbose = TRUE, toLower = TRUE, removeNumbers = TRUE,
             stem = TRUE, ignoredFeatures = c(stopwords("english")))
 dtm = as.DocumentTermMatrix(mydfm, weighting = weightTfIdf)
 dtm2 = removeSparseTerms(dtm, 0.97)
+
 #Splitting the data into train & test
 library(caTools)
 library(mlbench)
