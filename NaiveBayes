@@ -16,7 +16,7 @@ reviews$rev_rating[reviews$rev_rating == 2] = "Negative"
 reviews$rev_rating[reviews$rev_rating == 1] = "Very Negative"
 reviews$rev_rating = as.factor(reviews$rev_rating)
 
-#Text mining & Building Corpus
+#Text mining & Building Corpus using Quanteda
 library(tm)
 library(quanteda)
 myCorpus = Corpus(VectorSource(reviews$review))
